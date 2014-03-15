@@ -117,8 +117,8 @@ on the actual width of your widget area.
 == Screenshots ==
 
 1. The widget configuration
-2. The widget in a small widget area (no line breaks)
-3. The widget in a wider widget area (line breaks preserved)
+2. The widget in a wider widget area (line breaks preserved)
+3. The widget in a small widget area (no line breaks)
 
 == Changelog ==
 
