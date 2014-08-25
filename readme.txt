@@ -58,8 +58,7 @@ and languages (see http://bible2.net/download/bible-editions-available/):
 
 ### System Requirements
 
-* PHP: tested with 5.3.10 and 5.5.3
-* WordPress: tested with 3.8.1
+* PHP: tested with 5.3.10 and 5.5.9
 
 ### License
 
