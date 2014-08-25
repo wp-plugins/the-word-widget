@@ -92,7 +92,7 @@ if (!class_exists('b2_TheWordWidget')) {
 
       $bible = $instance['bible'] = preg_replace("[^A-Za-z0-9_]", "", $new_instance['bible']);
       if (!$bible) {
-        b2_Log::debug("the-word-widget.php::update: invalid for Bible name $bible");
+        b2_Log::debug("the-word-widget.php::update: invalid Bible name $bible");
         return false;
       }
 
