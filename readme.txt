@@ -3,7 +3,7 @@ Contributors: HSteeb
 Tags: bible, bibel, losung, devotional, verse of the day, votd, daily, täglich, sidebar, widget, Almeida Revista E Atualizada, An Bíobla Naofa, Bybel in Afrikaans, Chinese Union Version, English Standard Version, Hoffnung für Alle, Jubiläums-Bibel, Karoli, Kiswahili Contemporary Version, Kutsal Kitap, Modern Hebrew, Nuova Riveduta, O‘zbek tilidagi Muqaddas Kitob, Reina-Valera, Schlachter, Segond, Thai Holy Bible, Tübinger Bibel
 
 Requires at least: not known
-Tested up to: 4.0-beta4
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
