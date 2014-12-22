@@ -30,7 +30,7 @@ languages, available for free download and as a remote service.
 
 ### Bible Editions Available
 
-As of 2014-02, The Word is available for 2014 in the following Bible editions
+As of 2014-12, The Word is available for 2014 in the following Bible editions
 and languages (see http://bible2.net/download/bible-editions-available/):
 
 * Almeida Revista E Atualizada (Português Portuguese pt)
@@ -120,6 +120,12 @@ on the actual width of your widget area.
 3. The widget in a small widget area (no line breaks)
 
 == Changelog ==
+
+= 0.4 =
+* on restricted server configurations,
+* the plugin now falls back to a safer method to retrieve data from bible2.net
+* (if PHP setting allow_url_fopen=Off, simplexml_load_file fails,
+*  then the plugin uses the WordPress method wg_remote_get)
 
 = 0.3 =
 * the widget does not store a .twd file per year but uses the daily online service

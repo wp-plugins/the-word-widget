@@ -3,7 +3,7 @@
 Plugin Name: The Word Widget
 Plugin URI: http://bible2.net/download/the-word-widget-for-wordpress/
 Description: Shows two Bible sayings per day: "The Word" by project Bible 2.0, available in over 10 languages, got remotely for each day
-Version: 0.3
+Version: 0.4
 Author: Helmut Steeb
 Author URI: http://jsteeb.de
 License: GPLv2 or later

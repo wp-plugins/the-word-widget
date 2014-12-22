@@ -10,12 +10,56 @@ class ServerAccess
   static function getTwdFileListFromUrl($url)
   {
     b2_Log::debug("ServerAccess::getTwdFileListFromUrl: retrieving '$url'");
+
+    # 2014-12-22 HSteeb:
+    # simplexml_load_file fails if allow_url_fopen=off
+    # --> fall back to WP mechanism (which uses streams)
+    # No idea whether the WP mechanism will work on all server configurations
+    # --> keeping two ways may be better than one...
+    $TwdList = false;
+    $Xml = self::_getXmlUsingSimpleXml($url);
+    if (!$Xml) {
+      $Xml = self::_getXmlUsingWP($url);
+    }
+    if ($Xml) {
+      $TwdList = self::_parseTwdList($Xml);
+    }
+    b2_Log::debug("ServerAccess::getTwdFileListFromUrl: " . ($TwdList ? "ok" : "not ok"));
+    return $TwdList;
+  }
+
+  private static function _getXmlUsingSimpleXml($url)
+  {
+    b2_Log::debug("ServerAccess::_getXmlUsingSimpleXml: retrieving '$url'");
+
     $Xml = @simplexml_load_file($url);
     if (!$Xml) {
-      b2_Log::debug("ServerAccess::getTwdFileListFromUrl: failed to simplexml_load_file('$url').");
+      b2_Log::debug("ServerAccess::_getXmlUsingSimpleXml: failed to simplexml_load_file('$url').");
+    }
+    return $Xml;
+  }
+
+  private static function _getXmlUsingWP($url)
+  {
+    b2_Log::debug("ServerAccess::_getXmlUsingWP: retrieving '$url'");
+
+    $Response = wp_remote_get($url);
+    if (200 != wp_remote_retrieve_response_code($Response)) {
+      b2_Log::debug("ServerAccess::_getXmlUsingWP: failed to get '$url'.");
       return false;
     }
+    $body = wp_remote_retrieve_body($Response);
 
+    $Xml = simplexml_load_string($body);
+    if (!$Xml) {
+      b2_Log::debug("ServerAccess::_getXmlUsingWP: failed to simplexml_load_string from body of URL '$url'.");
+    }
+    return $Xml;
+  }
+
+  private static function _parseTwdList($Xml)
+  {
+    b2_Log::debug("ServerAccess::_parseTwdList");
     $currentYear = date("Y");
     $TwdFileList = array();
 
