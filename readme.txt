@@ -3,7 +3,7 @@ Contributors: HSteeb
 Tags: bible, bibel, losung, devotional, verse of the day, votd, daily, täglich, sidebar, widget, Almeida Revista E Atualizada, An Bíobla Naofa, Bybel in Afrikaans, Chinese Union Version, English Standard Version, Hoffnung für Alle, Jubiläums-Bibel, Karoli, Kiswahili Contemporary Version, Kutsal Kitap, Modern Hebrew, Nuova Riveduta, O‘zbek tilidagi Muqaddas Kitob, Reina-Valera, Schlachter, Segond, Thai Holy Bible, Tübinger Bibel
 
 Requires at least: not known
-Tested up to: 3.9
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,7 +30,7 @@ languages, available for free download and as a remote service.
 
 ### Bible Editions Available
 
-As of 2014-02, The Word is available for 2014 in the following Bible editions
+As of 2014-12, The Word is available for 2014 in the following Bible editions
 and languages (see http://bible2.net/download/bible-editions-available/):
 
 * Almeida Revista E Atualizada (Português Portuguese pt)
@@ -58,8 +58,7 @@ and languages (see http://bible2.net/download/bible-editions-available/):
 
 ### System Requirements
 
-* PHP: tested with 5.3.10 and 5.5.3
-* WordPress: tested with 3.8.1
+* PHP: tested with 5.3.10 and 5.5.9
 
 ### License
 
@@ -121,6 +120,12 @@ on the actual width of your widget area.
 3. The widget in a small widget area (no line breaks)
 
 == Changelog ==
+
+= 0.4 =
+* on restricted server configurations,
+* the plugin now falls back to a safer method to retrieve data from bible2.net
+* (if PHP setting allow_url_fopen=Off, simplexml_load_file fails,
+*  then the plugin uses the WordPress method wg_remote_get)
 
 = 0.3 =
 * the widget does not store a .twd file per year but uses the daily online service
